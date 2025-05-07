@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `bbd` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `bbd`;
 -- MySQL dump 10.13  Distrib 8.0.41, for Win64 (x86_64)
 --
 -- Host: localhost    Database: bbd
@@ -44,7 +42,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (9780008376116,'The Hobbit','J.R.R Tolkien','HarperCollins',2020,1,'He'),(9780750662246,'Contemporary Theory of Conservation','Salvador Munoz-Vinas','Butterworth-Heinemann Ltd',2004,2,'INK'),(9781292061184,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement','Thomas Connolly, Carolyn Begg, Addison Wesley','Pearson',2014,2,'Pud'),(9781408883358,'The Priory of the Orange Tree','Samantha Shannon','Bloomsburt Publishing PLC',2020,1,'He'),(9781684204519,'Atlas of Anatomy','Anne M Gilroy, Brian R MacPherson, Jamie Wikenheiser, Michael \nSchuenke, Erik Schulte','Thieme Medical Publishers Inc',2021,2,'Vb'),(9789132211676,'Boktjuven','Markus Zusak','B Wahlströms',2019,1,'He'),(9789178876235,'Kaka på kaka: godare  fika året runt','Camilla Hamid','Bonnier Fakta',2023,1,'Qca');
+INSERT INTO `book` VALUES (9780008376116,'The Hobbit','J.R.R Tolkien','HarperCollins',2020,1,'He'),(9780750662246,'Contemporary Theory of Conservation','Salvador Munoz-Vinas','Butterworth-Heinemann Ltd',2004,2,'INK'),(9781292061184,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement','Thomas Connolly, Carolyn Begg, Addison Wesley','Pearson',2014,2,'Pud'),(9781408883358,'The Priory of the Orange Tree','Samantha Shannon','Bloomsburt Publishing PLC',2020,1,'He'),(9781684204519,'Atlas of Anatomy','Anne M Gilroy, Brian R MacPherson, Jamie Wikenheiser, Michael \nSchuenke, Erik Schulte','Thieme Medical Publishers Inc',2021,2,'Vb'),(9789132211676,'Boktjuven','Markus Zusak','B Wahlströms',2019,1,'He'),(9789147077403,'Socialpolitiska klassiker','Håkan Johansson','Liber',2008,2,'INK'),(9789178876235,'Kaka på kaka: godare  fika året runt','Camilla Hamid','Bonnier Fakta',2023,1,'Qca');
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +63,7 @@ CREATE TABLE `bookcopy` (
   PRIMARY KEY (`bookCopyID`),
   KEY `idx_bookCopies` (`ISBN`),
   CONSTRAINT `bookcopy_ibfk_1` FOREIGN KEY (`ISBN`) REFERENCES `book` (`ISBN`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +72,7 @@ CREATE TABLE `bookcopy` (
 
 LOCK TABLES `bookcopy` WRITE;
 /*!40000 ALTER TABLE `bookcopy` DISABLE KEYS */;
-INSERT INTO `bookcopy` VALUES (1,9781292061184,0,0,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(2,9781684204519,0,1,'Atlas of Anatomy',2),(3,9780750662246,1,0,'Contemporary Theory of Conservation',2),(4,9781408883358,0,0,'The Priory of the Orange Tree',1),(5,9780008376116,0,1,'The Hobbit',1),(6,9789132211676,0,0,'Boktjuven',1),(7,9789178876235,1,0,'Kaka på kaka: godare fika året runt',1),(8,9781292061184,1,0,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(9,9781684204519,0,0,'Atlas of Anatomy',2),(10,9780750662246,0,0,'Contemporary Theory of Conservation',2),(11,9781408883358,0,0,'The Priory of the Orange Tree',1),(12,9780008376116,1,0,'The Hobbit',1),(13,9789132211676,0,0,'Boktjuven',1),(14,9789178876235,0,0,'Kaka på kaka: godare fika året runt',1),(15,9781292061184,0,1,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(16,9781684204519,1,0,'Atlas of Anatomy',2),(17,9780750662246,0,1,'Contemporary Theory of Conservation',2),(18,9781408883358,1,0,'The Priory of the Orange Tree',1),(19,9780008376116,0,0,'The Hobbit',1),(20,9789132211676,1,0,'Boktjuven',1);
+INSERT INTO `bookcopy` VALUES (1,9781292061184,0,0,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(2,9781684204519,0,1,'Atlas of Anatomy',2),(3,9780750662246,1,0,'Contemporary Theory of Conservation',2),(4,9781408883358,0,0,'The Priory of the Orange Tree',1),(5,9780008376116,0,1,'The Hobbit',1),(6,9789132211676,0,0,'Boktjuven',1),(7,9789178876235,1,0,'Kaka på kaka: godare fika året runt',1),(8,9781292061184,1,0,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(9,9781684204519,0,0,'Atlas of Anatomy',2),(10,9780750662246,0,0,'Contemporary Theory of Conservation',2),(11,9781408883358,0,0,'The Priory of the Orange Tree',1),(12,9780008376116,1,0,'The Hobbit',1),(13,9789132211676,0,0,'Boktjuven',1),(14,9789178876235,0,0,'Kaka på kaka: godare fika året runt',1),(15,9781292061184,0,1,'Database Systems: A Practical Approach to Design, Implementation, and \nManagement',2),(16,9781684204519,1,0,'Atlas of Anatomy',2),(17,9780750662246,0,1,'Contemporary Theory of Conservation',2),(18,9781408883358,1,0,'The Priory of the Orange Tree',1),(19,9780008376116,0,0,'The Hobbit',1),(20,9789132211676,1,0,'Boktjuven',1),(21,9789147077403,1,0,'Socialpolitiska klassiker',2),(22,9789147077403,0,0,'Socialpolitiska klassiker',2),(23,9789147077403,0,0,'Socialpolitiska klassiker',2),(24,9789147077403,0,0,'Socialpolitiska klassiker',2);
 /*!40000 ALTER TABLE `bookcopy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +84,7 @@ DROP TABLE IF EXISTS `dvd`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dvd` (
-  `dvdNo` int NOT NULL,
+  `dvdNo` int NOT NULL AUTO_INCREMENT,
   `title` char(50) NOT NULL,
   `director` char(50) NOT NULL,
   `releaseYear` year NOT NULL,
@@ -95,7 +93,7 @@ CREATE TABLE `dvd` (
   `placement` char(10) DEFAULT NULL,
   PRIMARY KEY (`dvdNo`),
   KEY `idx_dvdTitle` (`title`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -104,7 +102,7 @@ CREATE TABLE `dvd` (
 
 LOCK TABLES `dvd` WRITE;
 /*!40000 ALTER TABLE `dvd` DISABLE KEYS */;
-INSERT INTO `dvd` VALUES (1,'Dune: Part Two','Denis Villeneuve',2024,'drama',14,'Fdx'),(2,'The Holiday','Nancy \nMeyers',2006,'romance',14,'Fxr'),(3,'The Ritual','David \nBruckner',2017,'horror',14,'Fh'),(4,'Modig','Mark \nAndrews, Brenda Chapman, Steve Purcell',2012,'drama',14,'Fdx'),(5,'Hammarskjöld','Per \nFly',2023,'drama',14,'Fdx');
+INSERT INTO `dvd` VALUES (1,'Dune: Part Two','Denis Villeneuve',2024,'drama',14,'Fdx'),(2,'The Holiday','Nancy \nMeyers',2006,'romance',14,'Fxr'),(3,'The Ritual','David \nBruckner',2017,'horror',14,'Fh'),(4,'Modig','Mark \nAndrews, Brenda Chapman, Steve Purcell',2012,'drama',14,'Fdx'),(5,'Hammarskjöld','Per \nFly',2023,'drama',14,'Fdx'),(7,'Anastasia','Don Bluth, Gary Goldman',1997,'drama',14,'Fb');
 /*!40000 ALTER TABLE `dvd` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -123,7 +121,7 @@ CREATE TABLE `dvdcopy` (
   PRIMARY KEY (`dvdCopyID`),
   KEY `idx_dvdCopies` (`dvdNo`),
   CONSTRAINT `dvdcopy_ibfk_1` FOREIGN KEY (`dvdNo`) REFERENCES `dvd` (`dvdNo`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -132,7 +130,7 @@ CREATE TABLE `dvdcopy` (
 
 LOCK TABLES `dvdcopy` WRITE;
 /*!40000 ALTER TABLE `dvdcopy` DISABLE KEYS */;
-INSERT INTO `dvdcopy` VALUES (1,1,'Dune: Part Two',0),(2,1,'Dune: Part Two',1),(3,2,'The Holiday',0),(4,2,'The Holiday',1),(5,3,'The Ritual',1),(6,4,'Modig',0),(7,4,'Modig',1),(8,5,'Hammarskjöld',1),(9,5,'Hammarskjöld',1),(10,1,'Dune: Part Two',0),(11,1,'Dune: Part Two',1),(12,2,'The Holiday',0),(13,2,'The Holiday',1),(14,3,'The Ritual',1),(15,4,'Modig',0),(16,4,'Modig',1),(17,5,'Hammarskjöld',0),(18,5,'Hammarskjöld',1),(19,1,'Dune: Part Two',0),(20,2,'The Holiday',1);
+INSERT INTO `dvdcopy` VALUES (1,1,'Dune: Part Two',0),(2,1,'Dune: Part Two',1),(3,2,'The Holiday',0),(4,2,'The Holiday',1),(5,3,'The Ritual',1),(6,4,'Modig',0),(7,4,'Modig',1),(8,5,'Hammarskjöld',1),(9,5,'Hammarskjöld',1),(10,1,'Dune: Part Two',0),(11,1,'Dune: Part Two',1),(12,2,'The Holiday',0),(13,2,'The Holiday',1),(14,3,'The Ritual',1),(15,4,'Modig',0),(16,4,'Modig',1),(17,5,'Hammarskjöld',0),(18,5,'Hammarskjöld',1),(19,1,'Dune: Part Two',0),(20,2,'The Holiday',1),(21,7,'Anastasia',0),(22,7,'Anastasia',0),(23,7,'Anastasia',0);
 /*!40000 ALTER TABLE `dvdcopy` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,10 +300,6 @@ LOCK TABLES `user` WRITE;
 INSERT INTO `user` VALUES (100000,1,'jorgen.nilsson@ltu.se','Jörgen','Nilsson','Laboratorievägen 14','Luleå','97187',0,'borrower','98jy_'),(100001,3,'kalka-4@ltu.student.se','Kalle','Karlsson','Sommarstigen 35','Borås','50330',0,'borrower','1023'),(100002,1,'sara.silvertand@ltu.se','Sara','Silvertand','Hermelinsgatan 10','Luleå','97234',1,'borrower','678jd'),(100003,2,'solvig.tandberg@ltu.se','Solvig','Tandberg','Laboratorievägen 14','Luleå','97187',0,'borrower','@1234k'),(100004,3,'noora-2@ltu.student.se','Noora','Randig','Arkeologgatan 7','Västerås','72353',1,'borrower','#1234'),(100005,1,'katmir@gmail.com','Katayon','Miri','Tallundgstan 17','Visby','62146',0,'staff','#katayonm');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'bbd'
---
 
 --
 -- Dumping routines for database 'bbd'
@@ -522,4 +516,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-05-05 18:27:14
+-- Dump completed on 2025-05-07 16:44:59
